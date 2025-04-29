@@ -9,6 +9,7 @@ use App\Models\Seguridad\Usuario;
 use Illuminate\Contracts\View\View;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -55,7 +56,7 @@ class LoginController extends Controller
                 $mensajes = [];
                 $modeloUsuario = $this->modelUsuario;
                 $usuario       = $modeloUsuario->obtenerUsuario($usuarioAlias);
-
+                
                 if ($usuario) {
                     //Bloqueo
                     if ($usuario->usuarioEstado == "Bloqueado") {
@@ -66,7 +67,7 @@ class LoginController extends Controller
                         $mensajes = "Usuario Inválido " . $usuarioAlias . ", Favor de Verificar";
                     } else {
                         //Password
-                        if (md5($usuarioPassword) != $usuario->usuarioPassword) {
+                        if (!Hash::check($usuarioPassword, $usuario->usuarioPassword)) {
                             $bandera = false;
                             $mensajes = "Credenciales Invalidas, Favor de Verificar($usuario->usuarioIntentos)";
                         }
@@ -77,7 +78,7 @@ class LoginController extends Controller
                     $mensajes = "Correo electrónico o contraseña incorrectos";
                 }
 
-                if ($bandera) {
+                if ($bandera && Hash::check($usuarioPassword, $usuario->usuarioPassword)) {
                     $modeloUsuario->guardarSesion($usuario->idUsuario);
 
                     return response()->json(['success' => true, 'message' => 'Excelente logueo con éxito.', 'url' => $url]);

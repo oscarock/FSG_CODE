@@ -1,0 +1,60 @@
+// Importar Bootstrap
+@import "./custom.scss";
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: 'Inter', sans-serif;
+$font-family-monospace: 'Roboto', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Colors
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+//
+
+$colors: (
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "black":      $black,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+);
+
+// Shadows
+$box-shadow-sm:               0 .063rem .25rem rgba(#000000, .1);
+$box-shadow-lg:               0 .5rem 2.188rem rgba(#000000, .16);
+
+// Grid -active
+$enable-cssgrid: true;
+
+
+// Modals- Sizes
+$modal-md:                          664px;
+$modal-sm:                          377px;
+$modal-lg:                          756px;
+
+//Navbar
+$nav-link-color:                    $secondary;
+$nav-link-hover-color:              $blue;
+
+

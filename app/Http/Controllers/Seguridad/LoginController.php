@@ -10,6 +10,7 @@ use Illuminate\Contracts\View\View;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -80,6 +81,9 @@ class LoginController extends Controller
 
                 if ($bandera && Hash::check($usuarioPassword, $usuario->usuarioPassword)) {
                     $modeloUsuario->guardarSesion($usuario->idUsuario);
+
+                    // Aquí haces el login manual
+                    Auth::login($usuario);
 
                     return response()->json(['success' => true, 'message' => 'Excelente logueo con éxito.', 'url' => $url]);
                 } else {

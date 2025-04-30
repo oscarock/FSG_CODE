@@ -4,8 +4,9 @@ namespace App\Models\Seguridad;
 
 use Exception;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Usuario extends Model
+class Usuario extends Authenticatable
 {
 
     protected $table = 'seg_usuario';

@@ -13,6 +13,10 @@ class Usuario extends Authenticatable
     protected $primaryKey = "idUsuario";
     public $timestamps = false;
 
+    protected $fillable = [
+        'codigoValidacion',
+        'codigoExpira'
+    ];
 
     public function conectar($id, $token)
     {

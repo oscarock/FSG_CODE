@@ -10,6 +10,10 @@
         @endslot
     @endcomponent
 
+    @if (session('success'))
+        <div style="color: green">{{ session('success') }}</div>
+    @endif
+
     <div class="mt-3" id="alertContainer"></div>
     <form id="formLogin" method="post" action="{{ route('login.acceso') }}" class="my-5">
         @csrf
@@ -21,6 +25,8 @@
             <input placeholder="Contraseña" aria-label="contraseña" aria-describedby="Contraseña" id="password"
                 type="password" class="form-control" name="usuarioPassword" required autocomplete="current-password">
         </label>
+
+        <a href="{{ route('password.formCorreo') }}"> Olvidé mi contraseña ?</a>
 
         <button type="submit" class="btn btn-dark w-100 mt-3">Iniciar</button>
     </form>

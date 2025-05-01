@@ -17,6 +17,9 @@ Route::prefix('seguridad')->group(function () {
             LoginController::class,
             'acceso'
         ])->name('login.acceso');
+
+        Route::post('/usuarios/{id}/foto', [UsuarioController::class, 'subirFoto'])->name('usuarios.foto');
+        Route::get('/usuarios/{id}/foto', [UsuarioController::class, 'formularioFoto'])->name('usuarios.formulario_foto');
     });
     
     /**USUARIO */

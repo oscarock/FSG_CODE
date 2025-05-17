@@ -1,56 +1,59 @@
-# Pasos para ejecutar la aplicación
 
-## Clonar el repositorio
-```sh
-git clone https://github.com/oscarock/test-fsg
+# FSG_CODE
+
+Welcome to **FSG_CODE**!  
+This repository contains the source code and resources for the FSG (Flexible Software Generator) project.
+
+## Table of Contents
+
+- [About](#about)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## About
+
+FSG_CODE is designed to [briefly describe what your project does, e.g., "automate the generation of flexible software modules for various applications"].  
+The project aims to provide [state your goals or unique selling points].
+
+## Features
+
+- Feature 1: [Describe feature]
+- Feature 2: [Describe feature]
+- Feature 3: [Describe feature]
+- *(Add or remove features as needed)*
+
+## Installation
+
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/oscarock/FSG_CODE.git
+    cd FSG_CODE
+    ```
+2. **Install dependencies:**  
+   *(List any dependencies and installation steps, e.g.,)*
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Usage
+
+Provide examples and instructions for using the project. For example:
+```bash
+python main.py --input your_input_file
 ```
+*(Add more usage examples or screenshots as needed)*
 
-## Ingresar a la carpeta del proyecto
-```sh
-cd test-fsg
-```
+## Contributing
 
-## Configurar el backend
-Ingresar a la carpeta y modificar el archivo `.env` en la sección de configuración de la base de datos:
+Contributions are welcome!  
+Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-```env
-DB_CONNECTION=mysql
-DB_HOST=db
-DB_PORT=3306
-DB_DATABASE=laravel_db
-DB_USERNAME=laravel_user
-DB_PASSWORD=secret
-```
+## License
 
-## Levantar el proyecto con Docker
-```sh
-docker compose up -d
-```
-
-Se crearán tres contenedores: la aplicacion, un nginx para levantar la app y el de base de datos
-
-## Verificar los contenedores
-```sh
-docker ps -a
-```
-
-## Ejecutar migraciones
-```sh
-docker exec -it ID_CONTENEDOR bash
-php artisan migrate
-```
-
-## Ejecutar los seed
-```sh
-docker exec -it ID_CONTENEDOR bash
-php artisan db:seed
-```
-
-## Acceder a la aplicación
-Si no se cambiaron los puertos por defecto, las URLs serán:
-
-- **app:** [localhost:85](http://localhost:85/)
-
-## Ejecutar acciones de las HU
-Una vez configurado todo, ya puede interactuar con la aplicación y validar las HUs
+This project is licensed under the [MIT License](LICENSE).  
+*(Or specify your license)*
 
